@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login – Service Centre</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">Service Centre</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <section class="mini-hero">
+    <h2>Login / Signup</h2>
+  </section>
+
+  <section class="form-section">
+    <form class="styled-form">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="example@gmail.com" required>
+      <input type="password" placeholder="Password" required>
+
+      <h3 class="form-label">I want to:</h3>
+      
+      <div class="radio-group">
+        <label><input type="radio" name="action" value="service" required> List a Service</label>
+        <label><input type="radio" name="action" value="item"> List an Item</label>
+        <label><input type="radio" name="action" value="explore"> Explore Listings</label>
+      </div> 
+
+      <button type="submit" class="primary-btn">Continue</button>
+    </form>
+  </section>
+<script>
+document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const choice = document.querySelector('input[name="action"]:checked').value;
+
+    if (choice === "explore") {
+        window.location.href = "listings.html";
+    } else {
+        window.location.href = "dashboard.html";
+    }
+});
+</script>
+
+</body>
+</html>
